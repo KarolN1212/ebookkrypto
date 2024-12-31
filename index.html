@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ekskluzywny Sklep z Ebookami o Tradingu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Styl ogólny */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e1e1e1;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        header {
+            background: linear-gradient(to right, #000, #333);
+            color: #d4af37;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            font-size: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            padding: 14px 20px;
+            color: #d4af37;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #b18b4f;
+            color: white;
+            transform: scale(1.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            animation: fadeIn 1s ease-in;
+        }
+        .hidden {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        h2, h3 {
+            text-align: center;
+            color: #fff;
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 1.2rem;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .card {
+            border: 1px solid #555;
+            background-color: #222;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 300px;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+        }
+        .card-content {
+            padding: 15px;
+            color: #e1e1e1;
+        }
+        .card h3 {
+            color: #d4af37;
+            font-size: 1.5rem;
+        }
+        .stars {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .stars span {
+            font-size: 1.2rem;
+            color: #d4af37;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        footer {
+            background-color: #000;
+            color: #d4af37;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        button {
+            background-color: #d4af37;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #b18b4f;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            background-color: #444;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            background-color: #d4af37;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+        .cart-total {
+            font-size: 1.5rem;
+            text-align: right;
+            color: #fff;
+            margin-top: 10px;
+        }
+        .checkout {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .checkout button {
+            font-size: 1.2rem;
+            padding: 10px 30px;
+        }
+        .newsletter {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .newsletter input {
+            width: 60%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .newsletter button {
+            background-color: #d4af37;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .thank-you {
+            margin-top: 20px;
+            text-align: center;
+            color: #d4af37;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ekskluzywny Sklep z Ebookami o Tradingu</h1>
+</header>
+
+<nav>
+    <a href="#" onclick="navigateTo('home')">Strona Główna</a>
+    <a href="#" onclick="navigateTo('about')">O Nas</a>
+    <a href="#" onclick="navigateTo('products')">Oferta</a>
+    <a href="#" onclick="navigateTo('contact')">Kontakt</a>
+    <a href="#" onclick="navigateTo('cart')">Koszyk</a>
+</nav>
+
+<div class="container">
+    <!-- Sekcja główna -->
+    <div id="home" class="section active">
+        <h2>Witamy w naszym ekskluzywnym sklepie!</h2>
+        <p>Oferujemy najlepsze ebooki na temat tradingu oraz inwestowania w nowoczesnym świecie finansów. Poznaj sekrety sukcesu inwestorów i stań się częścią nowej ery finansów. Niezależnie od Twojego doświadczenia, znajdziesz tutaj coś dla siebie!</p>
+        <p>Nasze materiały obejmują szeroką gamę tematów, od analizy technicznej po strategie zarządzania ryzykiem. Dzięki naszym ebookom szybko podniesiesz swoje umiejętności i osiągniesz swoje cele finansowe.</p>
+    </div>
+
+    <!-- O nas -->
+    <div id="about" class="section hidden">
+        <h2>Kim jesteśmy?</h2>
+        <p>Jesteśmy liderem na rynku edukacji finansowej, oferującym wyłącznie najwyższej jakości materiały edukacyjne. Naszym celem jest pomoc każdemu, kto chce zrozumieć świat tradingu i osiągnąć sukces finansowy. Zespół ekspertów z wieloletnim doświadczeniem w branży finansowej dostarcza wiedzy, która jest zarówno praktyczna, jak i innowacyjna.</p>
+        <p>Nasze ebooki są tworzone z myślą o początkujących oraz zaawansowanych inwestorach. Znajdziesz u nas poradniki krok po kroku, jak rozpocząć przygodę z tradingiem, oraz zaawansowane strategie dla profesjonalistów. Nasza misja to wspierać Cię na każdym etapie Twojej drogi inwestycyjnej.</p>
+    </div>
+
+    <!-- Oferta -->
+    <div id="products" class="section hidden">
+        <h2>Nasze Produkty</h2>
+        <div class="product">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Ebook 1">
+                <div class="card-content">
+                    <h3>Ebook 1: Podstawy Tradingu</h3>
+                    <p>Idealny dla początkujących. Dowiedz się, czym jest trading i jak rozpocząć inwestowanie.</p>
+                    <button onclick="addToCart('Ebook 1', 150)">Dodaj do koszyka (150 zł)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontakt -->
+    <div id="contact" class="section hidden">
+        <h2>Kontakt</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Imię" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Twoja wiadomość" rows="5" required></textarea>
+            <button>Wyślij</button>
+        </div>
+    </div>
+
+    <!-- Koszyk -->
+    <div id="cart" class="section hidden">
+        <h2>Twój Koszyk</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total" id="cart-total">Łącznie: 0 zł</div>
+        <div class="checkout">
+            <button onclick="checkout()">Zamów</button>
+        </div>
+    </div>
+
+    <!-- Newsletter (tylko na stronie głównej) -->
+    <div id="newsletter" class="newsletter hidden">
+        <h3>Zapisz się do newslettera</h3>
+        <p>Otrzymuj najnowsze informacje o promocjach i nowych produktach!</p>
+        <input type="email" placeholder="Twój email">
+        <button>Zapisz się</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Ekskluzywny Sklep z Ebookami. Wszystkie prawa zastrzeżone.</p>
+</footer>
+
+<script>
+let cart = [];
+
+function navigateTo(section) {
+    document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+    document.getElementById(section).classList.remove('hidden');
+    if (section === 'home') {
+        document.getElementById('newsletter').classList.remove('hidden');
+    } else {
+        document.getElementById('newsletter').classList.add('hidden');
+    }
+}
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+    alert(`${name} dodano do koszyka.`);
+}
+
+function updateCart() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    cartItemsContainer.innerHTML = '';
+    let totalPrice = 0;
+    cart.forEach(item => {
+        totalPrice += item.price;
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = `<span>${item.name}</span><span>${item.price} zł</span>`;
+        cartItemsContainer.appendChild(cartItem);
+    });
+    cartTotal.innerHTML = `Łącznie: ${totalPrice} zł`;
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert('Twój koszyk jest pusty!');
+        return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    alert('Dziękujemy za zakup! Przekierowujemy do Twojego ebooka.');
+    window.location.href = 'ebook.html'; // Przykładowa strona ebooka
+    cart = [];
+    updateCart();
+}
+</script>
+</body>
+</html>
+
